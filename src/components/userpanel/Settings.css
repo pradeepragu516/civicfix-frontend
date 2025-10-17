@@ -1,0 +1,539 @@
+/* Settings.css - User Settings Page Styles */
+
+/* Base Styles & Variables */
+:root {
+  --US4-primary-color: #4a6cf7;
+  --US4-primary-hover: #3b5de7;
+  --US4-danger-color: #f46a6a;
+  --US4-gray-light: #f8f9fa;
+  --US4-gray-100: #f0f2f5;
+  --US4-gray-200: #e9ecef;
+  --US4-gray-300: #dee2e6;
+  --US4-gray-400: #ced4da;
+  --US4-gray-500: #adb5bd;
+  --US4-gray-600: #6c757d;
+  --US4-gray-700: #495057;
+  --US4-gray-800: #343a40;
+  --US4-gray-900: #212529;
+  --US4-body-bg: #ffffff;
+  --US4-card-bg: #ffffff;
+  --US4-text-color: #212529;
+  --US4-border-radius: 8px;
+  --US4-box-shadow: 0 2px 10px rgba(0.4, 0.3, 0.3, 0.5);
+  --US4-transition: all 0.2s ease-in-out;
+}
+
+/* Dark Mode Variables */
+.US4-dark-mode {
+  --US4-body-bg: #121212;
+  --US4-card-bg: #1e1e1e;
+  --US4-text-color: #e9ecef;
+  --US4-gray-light: #2c2c2c;
+  --US4-gray-100: #333333;
+  --US4-gray-200: #424242;
+  --US4-gray-300: #616161;
+  --US4-gray-700: #bdbdbd;
+  --US4-box-shadow: 0 2px 10px rgba(0.4, 0.3, 0.3, 0.5);
+}
+
+/* Main Container */
+.US4-settings-container {
+  background-color: var(--US4-body-bg);
+  color: var(--US4-text-color);
+  min-height: calc(100vh - 80px); 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 2rem;
+  transition: var(--US4-transition);
+}
+
+/* Header Styles */
+.US4-settings-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--US4-gray-200);
+}
+
+.US4-settings-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--US4-text-color);
+}
+
+.US4-settings-subtitle {
+  font-size: 0.95rem;
+  color: var(--US4-gray-600);
+  margin: 0;
+}
+
+/* Main Content Layout */
+.US4-settings-content {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--US4-card-bg);
+  border-radius: var(--US4-border-radius);
+  box-shadow: var(--US4-box-shadow);
+  overflow: hidden;
+}
+
+/* Sidebar Styles */
+.US4-settings-sidebar {
+  width: 260px;
+  background-color: var(--US4-card-bg);
+  border-right: 1px solid var(--US4-gray-200);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.US4-settings-profile-preview {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid var(--US4-gray-200);
+}
+
+.US4-settings-avatar {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.US4-settings-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.US4-settings-avatar-edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--US4-primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px solid var(--US4-card-bg);
+}
+
+.US4-settings-profile-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.US4-settings-profile-email {
+  font-size: 0.85rem;
+  color: var(--US4-gray-600);
+  margin: 0;
+}
+
+/* Navigation Menu */
+.US4-settings-navigation {
+  padding: 1rem 0;
+}
+
+.US4-settings-nav-item {
+  display: flex;
+  align-items: center;
+  padding: .75rem 1.5rem;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--US4-gray-700);
+  text-align: left;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: var(--US4-transition);
+}
+
+.US4-settings-nav-item:hover {
+  background-color: var(--US4-gray-100);
+  color: var(--US4-primary-color);
+}
+
+.US4-settings-nav-item.US4-active {
+  background-color: rgba(74, 108, 247, 0.1);
+  color: var(--US4-primary-color);
+  font-weight: 600;
+  position: relative;
+}
+
+.US4-settings-nav-item.US4-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--US4-primary-color);
+}
+
+.US4-settings-nav-icon {
+  margin-right: 0.75rem;
+}
+
+.US4-settings-logout {
+  margin-top: 1.5rem;
+  color: var(--US4-danger-color);
+}
+
+.US4-settings-logout:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Main Content Area */
+.US4-settings-main {
+  flex: 1;
+  padding: 2rem;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.US4-settings-tab-content {
+  flex: 1;
+}
+
+.US4-settings-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: var(--US4-text-color);
+}
+
+.US4-section-margin-top {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--US4-gray-200);
+}
+
+/* Form Controls */
+.US4-settings-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.US4-settings-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--US4-gray-700);
+}
+
+.US4-settings-input,
+.US4-settings-select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--US4-gray-900);
+  background-color: var(--US4-card-bg);
+  border: 1px solid var(--US4-gray-300);
+  border-radius: var(--US4-border-radius);
+  transition: var(--US4-transition);
+}
+
+.US4-dark-mode .US4-settings-input,
+.US4-dark-mode .US4-settings-select {
+  background-color: var(--US4-gray-100);
+  color: var(--US4-text-color);
+}
+
+.US4-settings-input:focus,
+.US4-settings-select:focus {
+  border-color: var(--US4-primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(74, 108, 247, 0.25);
+}
+
+/* Toggle Switch */
+.US4-settings-toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.US4-settings-toggle-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.US4-settings-toggle-label span {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.US4-settings-toggle-description {
+  font-size: 0.8rem;
+  color: var(--US4-gray-600);
+  margin: 0.25rem 0 0 0;
+}
+
+.US4-settings-toggle {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.US4-settings-toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.US4-settings-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--US4-gray-300);
+  transition: var(--US4-transition);
+  border-radius: 24px;
+}
+
+.US4-settings-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--US4-transition);
+  border-radius: 50%;
+}
+
+.US4-settings-toggle-input:checked + .US4-settings-toggle-slider {
+  background-color: var(--US4-primary-color);
+}
+
+.US4-settings-toggle-input:checked + .US4-settings-toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* Checkbox & Radio Styles */
+.US4-settings-checkbox-group,
+.US4-settings-radio-group {
+  margin-bottom: 1rem;
+}
+
+.US4-settings-checkbox,
+.US4-settings-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.US4-settings-checkbox-input,
+.US4-settings-radio-input {
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.US4-settings-checkbox-text,
+.US4-settings-radio-text {
+  font-size: 0.95rem;
+}
+
+/* Help Section Cards */
+.US4-settings-help-card {
+  background-color: var(--US4-gray-light);
+  border-radius: var(--US4-border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.US4-settings-help-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.US4-settings-help-text {
+  font-size: 0.85rem;
+  color: var(--US4-gray-600);
+  margin: 0 0 0.75rem 0;
+}
+
+.US4-settings-help-link {
+  font-size: 0.85rem;
+  color: var(--US4-primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.US4-settings-help-link:hover {
+  text-decoration: underline;
+}
+
+/* Action Buttons */
+.US4-settings-action-button {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--US4-border-radius);
+  background: transparent;
+  border: 1px solid var(--US4-gray-300);
+  color: var(--US4-text-color);
+  cursor: pointer;
+  transition: var(--US4-transition);
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.US4-settings-secondary-button:hover {
+  background-color: var(--US4-gray-200);
+}
+
+.US4-settings-danger-button {
+  color: white;
+  background-color: red;
+  border-color: var(--US4-danger-color);
+}
+
+.US4-settings-danger-button:hover {
+  background-color: red;
+}
+
+/* Bottom Action Bar */
+.US4-settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--US4-gray-200);
+}
+
+.US4-settings-button {
+  padding: 0.65rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--US4-border-radius);
+  cursor: pointer;
+  transition: var(--US4-transition);
+}
+
+.US4-settings-cancel-button {
+  background-color: transparent;
+  border: 1px solid var(--US4-gray-300);
+  color: var(--US4-gray-700);
+  margin-right: 1rem;
+}
+
+.US4-settings-cancel-button:hover {
+  background-color: var(--US4-gray-200);
+}
+
+.US4-settings-save-button {
+  background-color: var(--US4-primary-color);
+  border: 1px solid var(--US4-primary-color);
+  color: white;
+}
+
+.US4-settings-save-button:hover {
+  background-color: var(--US4-primary-hover);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .US4-settings-content {
+    flex-direction: column;
+  }
+  
+  .US4-settings-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--US4-gray-200);
+  }
+  
+  .US4-settings-profile-preview {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+  }
+  
+  .US4-settings-avatar {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .US4-settings-profile-info {
+    text-align: left;
+  }
+  
+  .US4-settings-navigation {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+  
+  .US4-settings-nav-item {
+    flex-direction: column;
+    padding: 0.75rem;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .US4-settings-nav-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .US4-settings-nav-item.US4-active::before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: auto;
+    height: 3px;
+  }
+  
+  .US4-settings-logout {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .US4-settings-container {
+    padding: 1rem;
+  }
+  
+  .US4-settings-main {
+    padding: 1.5rem;
+  }
+  
+  .US4-settings-actions {
+    flex-direction: column;
+  }
+  
+  .US4-settings-button {
+    width: 100%;
+  }
+  
+  .US4-settings-cancel-button {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+}

@@ -1,0 +1,430 @@
+/* VolunteerCreation.css */
+/* .volunteer-management-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+} */
+
+/* Volunteer Management Tab */
+.volunteer-management-tab1 {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab Header */
+.tab-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tab-header1 h2 {
+  font-size: 22px;
+  margin: 0;
+  color: #1f2a44;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.add-volunteer-button1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-volunteer-button1:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.add-volunteer-button1:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Error and Success Messages */
+.error-message1 {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.success-message1 {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Volunteer List */
+.volunteer-database-list1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.volunteer-database-card1 {
+  background-color: #f8fafc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.volunteer-database-card1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.volunteer-card-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.volunteer-card-header1 h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #1f2a44;
+}
+
+.volunteer-actions1 {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button1,
+.delete-button1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button1 {
+  background-color: #6b7280;
+  color: #ffffff;
+}
+
+.edit-button1:hover {
+  background-color: #4b5563;
+}
+
+.delete-button1 {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.delete-button1:hover {
+  background-color: #dc2626;
+}
+
+.edit-button1:focus,
+.delete-button1:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.volunteer-card-body1 p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.no-volunteers1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.volunteer-modal,
+.confirm-delete-modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: WHICH flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2a44;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.close-button:hover {
+  color: #1f2a44;
+}
+
+.close-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label:hover {
+  background-color: #e5e7eb;
+}
+
+.checkbox-label input {
+  margin: 0;
+}
+
+.specialized-field-group {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.specialized-field-group h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #1f2a44;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cancel-button {
+  padding: 10px 16px;
+  background-color: #6b7280;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #4b5563;
+}
+
+.cancel-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.save-button,
+.delete-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.save-button {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.save-button:hover {
+  background-color: #2563eb;
+}
+
+.save-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+.delete-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .volunteer-management-container {
+    padding: 16px;
+  }
+
+  .tab-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .add-volunteer-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .volunteer-database-list {
+    grid-template-columns: 1fr;
+  }
+
+  .volunteer-modal,
+  .confirm-delete-modal {
+    width: 95%;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 16px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .tab-header h2 {
+    font-size: 20px;
+  }
+
+  .save-button,
+  .cancel-button,
+  .delete-button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}

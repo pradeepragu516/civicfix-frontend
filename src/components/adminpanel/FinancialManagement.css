@@ -1,0 +1,676 @@
+/* AdminFinancialManagement.css */
+/* Base Styles */
+
+/* Container and Layout */
+.AdContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.AdMainContent {
+  margin-top: 1.5rem;
+}
+
+/* Page Header and Titles */
+.AdPageHeader {
+  margin-bottom: 1.5rem;
+}
+
+.AdPageTitle1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1e40af;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1e40af;
+}
+
+/* Cards */
+.AdCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0.4, 0.3, 0.3, 0.5);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Selection Controls */
+.AdSelectionControls {
+  margin-bottom: 1.5rem;
+}
+
+.AdGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.AdGridContainer:last-child {
+  margin-bottom: 0;
+}
+
+.AdSelectGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.AdSelectGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.AdSelectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.AdSelectWrapper.medium-width {
+  max-width: 300px;
+}
+
+.AdSelectWrapper select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  appearance: none;
+  background-color: white;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.AdSelectWrapper select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.AdSelectArrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6b7280;
+}
+
+.AdViewMode {
+  display: flex;
+  flex-direction: column;
+}
+
+.AdViewMode label, .AdTools label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.AdButtonGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.AdButtonGroup button {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.AdButtonGroup button:hover {
+  background-color: #f9fafb;
+}
+
+.AdButtonGroup button.active {
+  background-color: #1e40af;
+  color: white;
+  border-color: #1e40af;
+}
+
+/* Button Styles */
+.AdBtnPrimary {
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.AdBtnPrimary:hover {
+  background-color: #1e3a8a;
+}
+
+.AdBtnSecondary {
+  background-color: white;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AdBtnSecondary:hover {
+  background-color: #f9fafb;
+  border-color: #1e40af;
+  color: #1e40af;
+}
+
+/* Success Message */
+.AdSuccessMessage {
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Search and Filter */
+.AdSearchFilter {
+  margin-bottom: 1.5rem;
+}
+
+.AdSearchFilterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.AdSearchGroup {
+  flex: 1;
+  min-width: 250px;
+}
+
+.AdSearchWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.AdSearchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.AdSearchWrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #1f2937;
+}
+
+.AdSearchWrapper input:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.25);
+}
+
+.AdFilterControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Dashboard Section */
+.AdDashboardSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.AdSectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+}
+
+.AdSectionTitle .AdIcon {
+  margin-right: 0.5rem;
+}
+
+/* Summary Cards */
+.AdSummaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.AdSummaryCard {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0.4, 0.3, 0.3, 0.5);
+}
+
+.AdSummaryCard h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+.AdSummaryCard .AdAmount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.AdSummaryCard .AdYear {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.AdSummaryCard.AdAllocation {
+  border-left: 4px solid #1e40af;
+}
+
+.AdSummaryCard.AdSpent {
+  border-left: 4px solid #047857;
+}
+
+.AdSummaryCard.AdBalance {
+  border-left: 4px solid #7c3aed;
+}
+
+.AdSummaryCard.AdUtilization {
+  border-left: 4px solid #f59e0b;
+}
+
+/* Chart Container */
+.AdChartContainer {
+  margin-top: 2rem;
+}
+
+.AdChartTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+}
+
+.AdChartTitle .AdIcon {
+  margin-right: 0.5rem;
+}
+
+.AdChart {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0.4, 0.3, 0.3, 0.5);
+}
+
+/* Categories Card */
+.AdCategoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.AdPieChart {
+  flex: 1;
+  min-width: 300px;
+}
+
+.AdCategoryDetails {
+  flex: 1;
+  min-width: 300px;
+}
+
+.AdCategoryDetails h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.AdCategoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.AdCategoryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+}
+
+.AdCategoryName {
+  display: flex;
+  align-items: center;
+}
+
+.AdColorIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.AdCategoryItem .AdName {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.AdCategoryItem .AdValue {
+  font-weight: 500;
+}
+
+/* Trends Card */
+.AdTrendsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.AdTrendChart h3, .AdUtilizationChart h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+/* Allocation Management */
+.AdAllocationContent {
+  margin-top: 1rem;
+}
+
+.AdAllocationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.AdAllocationHeader h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.AdAllocationSummary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.AdAllocationItem {
+  padding: 0.75rem;
+}
+
+.AdAllocationLabel {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.AdAllocationValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.AdCategoryTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 1.5rem 0 1rem;
+  color: #1f2937;
+}
+
+.AdCategoryAllocations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.AdCategoryAllocationItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  gap: 1rem;
+}
+
+.AdProgressBar {
+  flex: 1;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.AdProgress {
+  height: 100%;
+  background-color: #1e40af;
+  border-radius: 4px;
+}
+
+.AdPercentage {
+  min-width: 50px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Modal */
+.AdModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.AdModal {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0.4, 0.3, 0.3, 0.5);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.AdModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.AdModalHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.AdCloseButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.AdModalBody {
+  padding: 1.5rem;
+}
+
+.AdModalBody p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.AdModalBody textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  resize: vertical;
+}
+
+.AdModalBody textarea:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.25);
+}
+
+.AdModalFooter {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Update Form */
+.AdUpdateForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.AdFormSection {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1.5rem;
+}
+
+.AdFormSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.AdFormSection h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.AdFormNote {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.AdFormGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.AdFormGroup:last-child {
+  margin-bottom: 0;
+}
+
+.AdFormGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.AdFormGroup input {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+}
+
+.AdFormGroup input:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .AdPageTitle1 {
+    font-size: 1.5rem;
+  }
+  
+  .AdSectionTitle {
+    font-size: 1.125rem;
+  }
+  
+  .AdSummaryCard .AdAmount {
+    font-size: 1.25rem;
+  }
+  
+  .AdCategoriesContainer {
+    flex-direction: column;
+  }
+  
+  .AdButtonGroup {
+    flex-wrap: wrap;
+  }
+  
+  .AdCategoryAllocations {
+    overflow-x: auto;
+  }
+  
+  .AdCategoryAllocationItem {
+    min-width: 500px;
+  }
+}
+
+/* Utilities */
+.AdIcon {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
