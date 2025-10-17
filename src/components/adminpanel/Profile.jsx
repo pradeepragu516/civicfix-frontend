@@ -3,7 +3,7 @@ import { Camera, Edit2, Save, X, Mail, Phone, MapPin, Briefcase, Calendar, Shiel
 import './Profile.css';
 import profileImageFile from '../../assets/pradeep.jpg'; // Adjust the path as necessary
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const Profile = () => {

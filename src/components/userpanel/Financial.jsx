@@ -5,7 +5,7 @@ import {
 } from 'recharts';
 import './Financial.css';
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 // Static data for dropdowns (in a real app, this could come from an API)

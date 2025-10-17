@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Camera, Edit2, Save, X, Mail, Phone, MapPin, Briefcase, Calendar, User, FileText, Home, Map } from 'lucide-react';
 import './Profiles.css';
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const UserProfile = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Filter, ChevronDown, ChevronUp, Calendar, Clock, Tag, MapPin, AlertCircle, CheckCircle, Clock as PendingIcon } from 'lucide-react';
 import './MyReports.css';
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const MyReports = () => {

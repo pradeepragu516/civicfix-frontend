@@ -17,7 +17,7 @@ import {
 import "./UserDashboardHome.css";
 import axios from "axios"; // Import axios
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const UserDashboardHome = () => {

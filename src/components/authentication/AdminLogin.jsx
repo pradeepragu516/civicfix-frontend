@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaLock } from "react-icons/fa";
 import "./AdminLogin.css";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const AdminLogin = () => {

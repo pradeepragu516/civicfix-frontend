@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaLock, FaEnvelope, FaIdCard } from "react-icons/fa";
 import "./Register.css";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const Register = () => {

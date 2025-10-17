@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 import "./UserDashboard.css";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const UserSidebar = () => {

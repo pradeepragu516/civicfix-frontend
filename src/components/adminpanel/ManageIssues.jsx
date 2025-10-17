@@ -3,7 +3,7 @@ import { Search, Filter, Eye, CheckCircle, AlertTriangle, Calendar, Clock, Downl
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ManageIssues.css';
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 const ManageIssues = () => {

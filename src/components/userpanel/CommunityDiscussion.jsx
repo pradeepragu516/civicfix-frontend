@@ -3,7 +3,7 @@ import { Search, Send, ThumbsUp, MessageCircle, Share2, Flag, Clock } from 'luci
 import './CommunityDiscussion.css';
 import axios from 'axios';
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:5000";
 
 
 // Get current user from localStorage
