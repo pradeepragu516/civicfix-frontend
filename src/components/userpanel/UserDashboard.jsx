@@ -16,6 +16,9 @@ import {
 } from "react-icons/fa";
 import "./UserDashboard.css";
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const UserSidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
@@ -57,7 +60,7 @@ const UserSidebar = () => {
 
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/user/${userId}`, {
+        const response = await fetch(`${API}/api/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

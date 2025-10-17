@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Search, Filter, ChevronDown, ChevronUp, Calendar, Clock, Tag, MapPin, AlertCircle, CheckCircle, Clock as PendingIcon } from 'lucide-react';
 import './MyReports.css';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const MyReports = () => {
   const [reports, setReports] = useState([]);
   const [filteredReports, setFilteredReports] = useState([]);
@@ -24,7 +27,7 @@ const MyReports = () => {
           throw new Error('Please login to view your reports');
         }
 
-        const response = await fetch('http://localhost:5000/api/reports', {
+        const response = await fetch(`${API}/api/reports`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

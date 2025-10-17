@@ -13,6 +13,9 @@ import {
 } from "react-icons/fa";
 import "./AdminDashboardHome.css";
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const AdminDashboardHome = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({
@@ -44,7 +47,7 @@ const AdminDashboardHome = () => {
         }
 
         // Fetch issues data
-        const issuesResponse = await fetch("http://localhost:5000/api/admin/reports", {
+        const issuesResponse = await fetch(`${API}/api/admin/reports`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -90,7 +93,7 @@ const AdminDashboardHome = () => {
 
         // Fetch financial data for Pollachi town (id: 1)
         const financialResponse = await fetch(
-          `http://localhost:5000/api/finances/town/1?startYear=2024&endYear=2024`,
+          `${API}/api/finances/town/1?startYear=2024&endYear=2024`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

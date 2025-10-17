@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaLock, FaEnvelope, FaIdCard } from "react-icons/fa";
 import "./Register.css";
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -21,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch(`${API}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password, joinDate: new Date().toISOString() }),
@@ -32,7 +35,7 @@ const Register = () => {
         // Store userId in localStorage
         localStorage.setItem("userId", data.userId);
         // Attempt automatic login
-        const loginResponse = await fetch("http://localhost:5000/api/login", {
+        const loginResponse = await fetch(`${API}/api/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),

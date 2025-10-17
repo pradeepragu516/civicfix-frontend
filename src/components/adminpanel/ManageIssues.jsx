@@ -3,6 +3,9 @@ import { Search, Filter, Eye, CheckCircle, AlertTriangle, Calendar, Clock, Downl
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ManageIssues.css';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const ManageIssues = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,7 +57,7 @@ const ManageIssues = () => {
         if (!token) {
           throw new Error('Please login to view reports');
         }
-        const response = await fetch('http://localhost:5000/api/admin/reports', {
+        const response = await fetch(`${API}/api/admin/reports`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -289,7 +292,7 @@ const ManageIssues = () => {
         comments: [...(selectedIssue.comments || []), newComment],
       };
 
-      const response = await fetch(`http://localhost:5000/api/admin/reports/${selectedIssue.id}`, {
+      const response = await fetch(`${API}/api/admin/reports/${selectedIssue.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -344,7 +347,7 @@ const ManageIssues = () => {
       if (!token) {
         throw new Error('Please login to view reports');
       }
-      const response = await fetch('http://localhost:5000/api/admin/reports', {
+      const response = await fetch(`${API}/api/admin/reports`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

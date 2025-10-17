@@ -17,6 +17,9 @@ import {
 import "./UserDashboardHome.css";
 import axios from "axios"; // Import axios
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const UserDashboardHome = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
@@ -39,7 +42,7 @@ const UserDashboardHome = () => {
 
   // Set up Axios with auth header
   const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: `${API}/api`,
     headers: {
       Authorization: `Bearer ${token}`,
     },

@@ -3,6 +3,9 @@ import { Search, Send, ThumbsUp, MessageCircle, Share2, Flag, Clock } from 'luci
 import './CommunityDiscussion.css';
 import axios from 'axios';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 // Get current user from localStorage
 const getCurrentUser = () => {
   const token = localStorage.getItem('token');
@@ -32,7 +35,7 @@ const CommunityDiscussion = () => {
 
   // Set up Axios with auth header
   const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: `${API}/api`,
     headers: {
       Authorization: `Bearer ${currentUser.token}`
     }

@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Camera, Edit2, Save, X, Mail, Phone, MapPin, Briefcase, Calendar, User, FileText, Home, Map } from 'lucide-react';
 import './Profiles.css';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const UserProfile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [profileData, setProfileData] = useState({
@@ -47,7 +50,7 @@ const UserProfile = () => {
 
   const fetchUserData = async (userId, token) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/user/${userId}`, {
+      const response = await fetch(`${API}/api/user/${userId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +108,7 @@ const UserProfile = () => {
         const token = localStorage.getItem('token');
         
         try {
-          const response = await fetch(`http://localhost:5000/api/user/${userId}/upload-image`, {
+          const response = await fetch(`${API}/api/user/${userId}/upload-image`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -162,14 +165,14 @@ const UserProfile = () => {
     const dataToSend = { ...editedData };
 
     try {
-      console.log('Sending PUT request to:', `http://localhost:5000/api/user/${userId}`);
+      console.log('Sending PUT request to:', `${API}/api/user/${userId}`);
       console.log('Request headers:', {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       });
       console.log('Request body:', dataToSend);
 
-      const response = await fetch(`http://localhost:5000/api/user/${userId}`, {
+      const response = await fetch(`${API}/api/user/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

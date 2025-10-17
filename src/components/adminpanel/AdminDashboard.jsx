@@ -17,6 +17,8 @@ import "./AdminDashboard.css";
 // Replace with default profile pic instead of using the TN image
 import defaultProfile from "../../assets/pradeep.jpg";
 
+
+
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();

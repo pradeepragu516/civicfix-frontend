@@ -3,6 +3,9 @@ import { ArrowLeft, CheckCircle, Wrench, Check, Users } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './VolunteerManagement.css';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const VolunteerManagement = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -57,7 +60,7 @@ const VolunteerManagement = () => {
           }
 
           setLoading(true);
-          const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+          const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
           console.log(`Fetching report from: ${apiBaseUrl}/api/admin/reports/${issueId}`);
           const response = await fetch(`${apiBaseUrl}/api/admin/reports/${issueId}`, {
             headers: { Authorization: `Bearer ${token}` },
@@ -150,7 +153,7 @@ const VolunteerManagement = () => {
         return;
       }
 
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Fetching assignment from: ${apiBaseUrl}/api/volunteer-assignments/issue/${issueId}`);
       const response = await fetch(`${apiBaseUrl}/api/volunteer-assignments/issue/${issueId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -217,7 +220,7 @@ const VolunteerManagement = () => {
         return;
       }
 
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Fetching volunteers from: ${apiBaseUrl}/api/volunteers?category=${category}`);
       const response = await fetch(`${apiBaseUrl}/api/volunteers?category=${category}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -317,7 +320,7 @@ const VolunteerManagement = () => {
       }
 
       // Verify issue status
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Verifying report at: ${apiBaseUrl}/api/admin/reports/${issueId}`);
       const issueResponse = await fetch(`${apiBaseUrl}/api/admin/reports/${issueId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -465,7 +468,7 @@ const VolunteerManagement = () => {
         throw new Error('Invalid report ID');
       }
 
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Refreshing report from: ${apiBaseUrl}/api/admin/reports/${issueId}`);
       const response = await fetch(`${apiBaseUrl}/api/admin/reports/${issueId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -542,7 +545,7 @@ const VolunteerManagement = () => {
         throw new Error('Please login to update completion status');
       }
 
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Updating volunteer completion at: ${apiBaseUrl}/api/volunteer-assignments/volunteer-complete/${assignment._id}`);
       const response = await fetch(`${apiBaseUrl}/api/volunteer-assignments/volunteer-complete/${assignment._id}`, {
         method: 'POST',
@@ -606,7 +609,7 @@ const VolunteerManagement = () => {
         throw new Error('Please login to complete the work');
       }
 
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || `${API}`;
       console.log(`Completing assignment at: ${apiBaseUrl}/api/volunteer-assignments/complete/${assignment._id}`);
       const completeResponse = await fetch(`${apiBaseUrl}/api/volunteer-assignments/complete/${assignment._id}`, {
         method: 'POST',

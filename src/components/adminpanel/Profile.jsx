@@ -3,6 +3,9 @@ import { Camera, Edit2, Save, X, Mail, Phone, MapPin, Briefcase, Calendar, Shiel
 import './Profile.css';
 import profileImageFile from '../../assets/pradeep.jpg'; // Adjust the path as necessary
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const Profile = () => {
   // Sample admin data - replace with your actual data source
   const [profileData, setProfileData] = useState({
@@ -44,7 +47,7 @@ const Profile = () => {
         }
 
         // Upload image to backend API
-        const response = await fetch(`http://localhost:5000/api/user/${userId}/upload-image`, {
+        const response = await fetch(`${API}/api/user/${userId}/upload-image`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,

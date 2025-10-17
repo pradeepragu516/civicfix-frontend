@@ -5,6 +5,9 @@ import {
 } from 'recharts';
 import './Financial.css';
 
+const API = process.env.REACT_APP_API_URL;
+
+
 // Static data for dropdowns (in a real app, this could come from an API)
 const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 
@@ -85,7 +88,7 @@ export default function FinancialManagement() {
         }
         
         const response = await fetch(
-          `http://localhost:5000/api/finances/${entityType}/${entityId}?startYear=${startYear}&endYear=${endYear}`,
+          `${API}/api/finances/${entityType}/${entityId}?startYear=${startYear}&endYear=${endYear}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -117,7 +120,7 @@ export default function FinancialManagement() {
       const fetchComparisonData = async () => {
         try {
           const response = await fetch(
-            `http://localhost:5000/api/finances/panchayat/${comparisonEntity.id}?startYear=${startYear}&endYear=${endYear}`,
+            `${API}/api/finances/panchayat/${comparisonEntity.id}?startYear=${startYear}&endYear=${endYear}`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -184,7 +187,7 @@ export default function FinancialManagement() {
   const handleSubmitFeedback = async () => {
     try {
       // In a real app, send feedback to the backend
-      const response = await fetch('http://localhost:5000/api/feedback', {
+      const response = await fetch(`${API}/api/feedback`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ feedback }),
