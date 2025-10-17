@@ -3,7 +3,8 @@ import { Search, Send, ThumbsUp, MessageCircle, Share2, Flag, Clock } from 'luci
 import './CommunityDiscussion.css';
 import axios from 'axios';
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 
 // Get current user from localStorage

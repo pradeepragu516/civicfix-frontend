@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Search, Filter, ChevronDown, ChevronUp, Calendar, Clock, Tag, MapPin, AlertCircle, CheckCircle, Clock as PendingIcon } from 'lucide-react';
 import './MyReports.css';
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 
 const MyReports = () => {

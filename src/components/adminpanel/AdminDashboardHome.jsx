@@ -12,8 +12,8 @@ import {
   FaEllipsisH
 } from "react-icons/fa";
 import "./AdminDashboardHome.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 
-const API = "http://localhost:5000";
 
 
 const AdminDashboardHome = () => {

@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Camera, Edit2, Save, X, Mail, Phone, MapPin, Briefcase, Calendar, User, FileText, Home, Map } from 'lucide-react';
 import './Profiles.css';
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 
 const UserProfile = () => {

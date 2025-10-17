@@ -4,8 +4,8 @@ import {
   PieChart, Pie, Cell
 } from 'recharts';
 import './Financial.css';
+const API = import.meta.env.VITE_API_BASE_URL;
 
-const API = "http://localhost:5000";
 
 
 // Static data for dropdowns (in a real app, this could come from an API)

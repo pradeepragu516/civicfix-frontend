@@ -17,7 +17,8 @@ import {
 import "./UserDashboardHome.css";
 import axios from "axios"; // Import axios
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 
 const UserDashboardHome = () => {

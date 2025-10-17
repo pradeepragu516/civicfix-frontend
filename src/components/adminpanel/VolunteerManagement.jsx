@@ -3,7 +3,8 @@ import { ArrowLeft, CheckCircle, Wrench, Check, Users } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './VolunteerManagement.css';
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 
 const VolunteerManagement = () => {

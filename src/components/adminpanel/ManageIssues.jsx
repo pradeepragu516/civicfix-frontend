@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Search, Filter, Eye, CheckCircle, AlertTriangle, Calendar, Clock, Download, ChevronDown, ChevronUp, X, RefreshCw, List, Grid, MapPin } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ManageIssues.css';
+const API = import.meta.env.VITE_API_BASE_URL;
 
-const API = "http://localhost:5000";
 
 
 const ManageIssues = () => {

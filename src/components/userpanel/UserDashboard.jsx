@@ -15,8 +15,8 @@ import {
   FaAngleLeft
 } from "react-icons/fa";
 import "./UserDashboard.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 
-const API = "http://localhost:5000";
 
 
 const UserSidebar = () => {
